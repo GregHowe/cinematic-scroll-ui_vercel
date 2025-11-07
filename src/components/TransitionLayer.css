@@ -1,0 +1,61 @@
+/* TransitionLayer.css */
+
+.transition-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  /* ✅ Antes tapaba las partículas, ahora deja verlas */
+  background: transparent;
+
+  /* ✅ Este contenedor debe estar por DEBAJO del blur del OverlayScene */
+  z-index: 1;
+}
+
+.parallax-layer {
+  position: absolute;
+  width: 120%;
+  height: 120%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  animation: parallaxMove 12s ease-in-out infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  opacity: 0.35;
+
+  /* ✅ Capas visuales siguen vivas */
+  mix-blend-mode: screen;
+}
+
+.layer-back {
+  background-image: linear-gradient(135deg, #ff6ec4, #7873f5);
+  z-index: 1;
+}
+
+.layer-front {
+  background-image: linear-gradient(135deg, #43e97b, #38f9d7);
+  z-index: 2;
+}
+
+.transition-text {
+  position: relative;
+  z-index: 3;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  text-align: center;
+}
+
+.transition-text h2 {
+  font-size: 3rem;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+@keyframes parallaxMove {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-5%, -5%); }
+  100% { transform: translate(0, 0); }
+}

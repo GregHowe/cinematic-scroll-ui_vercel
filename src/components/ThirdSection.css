@@ -1,0 +1,29 @@
+/* ThirdSection.css (update) */
+
+.third-section {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+
+  /* GRADIENT distinto: teal oscuro -> near-black */
+  background: radial-gradient(circle at 80% 20%, #00212b 0%, #071127 50%, #05040b 100%);
+  color: #f6fbff;
+  font-family: "Montserrat", sans-serif;
+}
+
+.third-section h2 {
+  font-size: 3.4rem;
+  letter-spacing: 1.5px;
+  opacity: 0.95;
+  filter: blur(0.4px);
+  text-shadow: 0 0 40px rgba(255, 255, 255, 0.08);
+  max-width: 1100px;
+  padding: 0 1rem;
+}

@@ -1,0 +1,32 @@
+/* SecondSection.css (update) */
+
+.second-section {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  /* GRADIENT distinto: violeta profundo -> púrpura */
+  background: radial-gradient(circle at 20% 30%, #3b0754 0%, #0f0c29 50%, #090615 100%);
+  color: #f7f7fb;
+  font-family: "Montserrat", sans-serif;
+}
+
+.second-section h2 {
+  font-size: 3rem;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+}
+
+.second-section p {
+  font-size: 1.4rem;
+  opacity: 0.85;
+  max-width: 800px;
+  padding: 0 1rem;
+}

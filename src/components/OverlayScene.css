@@ -1,0 +1,70 @@
+/* OverlayScene.css */
+
+.overlay-container {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #0f0c29, #302b63, #24243e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* PARTÍCULAS — SIEMPRE arriba */
+#tsparticles-global {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999 !important; /* ⬅️ ahora SIEMPRE visible */
+}
+
+/* Fondo dinámico detrás */
+.gradient-layer {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(135deg, #ff00cc, #333399);
+  animation: gradientMove 10s ease infinite;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+/* Blur ahora NO tapa partículas */
+.blur-layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(18px);
+  z-index: 1;
+}
+
+/* Texto siempre el más arriba */
+.parallax-text {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-family: "Montserrat", sans-serif;
+  z-index: 10000;
+}
+
+.parallax-text h1 {
+  font-size: 4rem;
+  letter-spacing: 2px;
+  margin-bottom: 1rem;
+}
+
+.parallax-text p {
+  font-size: 1.5rem;
+  opacity: 0.8;
+}
+
+@keyframes gradientMove {
+  0% { transform: translate(0, 0); }
+  50% { transform: translate(-10%, -10%); }
+  100% { transform: translate(0, 0); }
+}
